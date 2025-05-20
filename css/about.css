@@ -1,0 +1,294 @@
+.big-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Big About Section */
+.big-about-section {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  background-color: #004d54;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 60px;
+  overflow: hidden;
+}
+
+.big-about-image {
+  flex: 1;
+  min-width: 400px;
+}
+
+.big-about-image img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  height: 600px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  transition: transform 0.5s ease;
+}
+
+.big-about-image:hover img {
+  transform: scale(1.05);
+}
+
+.big-about-content {
+  flex: 1;
+}
+
+.big-about-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  color: #e64633;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.big-about-content p {
+  margin-bottom: 50px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  line-height: 1.7;
+}
+.mis {
+  color: #e64633;
+  font-size: 1.5rem;
+}
+
+/* Massive Hire Me Button */
+.big-hire-btn {
+  display: inline-block;
+  background: #e64633;
+  padding: 25px 60px;
+  border-radius: 70px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(110, 72, 170, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.big-hire-btn a {
+  color: white;
+}
+
+.big-hire-btn:hover {
+  background: linear-gradient(135deg, #004d54 0%, white 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(110, 72, 170, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .big-about-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .big-about-image {
+    min-width: 100%;
+  }
+
+  .big-about-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .big-about-content p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .big-container {
+    padding: 40px 20px;
+  }
+
+  .big-about-section {
+    padding: 40px;
+  }
+
+  .big-about-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .big-hire-btn {
+    padding: 20px 50px;
+    font-size: 1.5rem;
+  }
+}
+/* Add these animations to your existing CSS */
+
+/* Floating emoji background */
+.big-about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image animation */
+.big-about-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  transform: perspective(1000px);
+}
+
+.big-about-image img {
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.big-about-image:hover img {
+  transform: scale(1.05) rotate(1deg);
+  filter: brightness(1.05);
+}
+
+.big-about-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(230, 70, 51, 0.1),
+    rgba(0, 77, 84, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.big-about-image:hover::after {
+  opacity: 1;
+}
+
+/* Text animation */
+.big-about-content h2 {
+  position: relative;
+  display: inline-block;
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 5px rgba(230, 70, 51, 0.5);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(230, 70, 51, 0.8),
+      0 0 20px rgba(230, 70, 51, 0.6);
+  }
+}
+
+.big-about-content p {
+  position: relative;
+}
+
+.big-about-content p::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #e64633, #004d54);
+  animation: expandLine 2s ease-out forwards;
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100px;
+  }
+}
+
+/* Button animation */
+.big-hire-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.big-hire-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.big-hire-btn:hover::before {
+  left: 100%;
+}
+
+.big-hire-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(230, 70, 51, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(230, 70, 51, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(230, 70, 51, 0);
+  }
+}
+
+/* Content entrance animation */
+.big-about-content {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .big-about-section::before {
+    font-size: 1.5rem;
+    word-spacing: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .big-about-section::before {
+    font-size: 1rem;
+    word-spacing: 30px;
+  }
+
+  .big-about-content h2 {
+    animation: none;
+    text-shadow: none;
+  }
+
+  .big-hire-btn {
+    animation: none;
+  }
+}
